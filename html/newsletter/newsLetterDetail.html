@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>newsLetterDetail</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+  
+<div id="newsLetterDetail" class="maxWidth">
+  <div class="dropDownHeader">
+    <div class="dropDownMenu dropDown">
+      <div class="title"><span>2022년 2월</span></div>
+      <div class="content">
+        <ul class="dropDownList interval color">
+          <li class="active"><a href="#">2022년 2월</a></li>
+          <li><a href="#">2022년 1월</a></li>
+          <li><a href="#">2021년 12월</a></li>
+          <li><a href="#">2021년 11월</a></li>
+          <li><a href="#">2021년 10월</a></li>
+          <li><a href="#">2021년 9월</a></li>
+          <li><a href="#">2021년 8월</a></li>
+        </ul>
+        <button type="button" class="btnDropDownClose">닫기</button>
+      </div>
+    </div>
+    <button type="button">닫기</button>
+  </div>
+
+  <div class="summaryCont dropDownDepth2">
+    <h3>라이나생명 2월 소식지</h3>
+    <div class="moreDropDown">
+      <div class="inner">
+        <p>라이나생명 2월 소식지라이나생명 2월 소식지가 발간되었습니다. 이번 달에는 어떤 콘텐츠가 실려있는지 알아볼까요?</p>
+        <ol class="bullList line">
+          <li>치아 건강 정보 한눈에 보기!</li>
+          <li>[전문가의 치아력] 치아의 빈 자리를 그냥 두면?</li>
+          <li>구강 상식 OX퀴즈</li>
+          <li>부담스러운 치과 치료비 미리 대비하세요</li>
+        </ol>
+      </div>
+    </div>
+
+
+
+
+    <button type="button" class="btnDropDown"><span></span></button>
+  </div>
+
+  <div class="pdfViewer">
+    <div class="visual">
+      <img src="../../img/newsletter/img_pdf_viewer.png" alt="">
+      <img src="../../img/newsletter/img_pdf_viewer2.png" alt="">
+    </div>
+  </div>
+  
+  <div class="statusCont">
+    <div class="share">
+      <button type="button" class="kakao">카카오톡</button>
+      <button type="button" class="share">공유</button>
+    </div>
+    <div class="count">
+      <span>조회수 253회</span>
+    </div>
+  </div>
+  
+  <div id="dimmed"></div>
+  <div id="dimmed2"></div>
+  <div id="alertCopyMsg" class=""><p>URL이 복사되었습니다.</p></div>
+</div>
+
+<script src="../../js/common.js"></script>
+<script>
+  // 드룹 다운 메뉴가 2개가 같이 있는 케이스
+  var btnDropDown = document.querySelector('.btnDropDown');
+  var dropDownMenu = document.querySelector('.dropDown');
+  var dropDownDepth2 = document.querySelector('.summaryCont');
+
+  btnDropDown.addEventListener('click', (e)=>{
+    dropDownDepth2.classList.toggle('toggle');
+    dimmed2.classList.toggle('visible');
+  });
+
+  // dimmed2 클릭 시 모든 메뉴 닫기
+  dimmed2.addEventListener("click", () => {
+    // 드룹 다운1
+    dropDownMenu.classList.remove("active");
+    // 드룹 다운2
+    dropDownDepth2.classList.remove("toggle");
+    dimmed.classList.remove("visible");
+    dimmed2.classList.remove("visible");
+  });
+
+  var btnShare = document.querySelector('.share');
+  urlCopy(btnShare);
+</script>
+
+</body>
+</html>

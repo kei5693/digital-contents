@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>productOverview</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+  
+<div id="producOverview" class="maxWidth">
+  <div class="dropDownHeader">
+    <div class="dropDownMenu dropDown">
+      <div class="title"><span>치아</span></div>
+      <div class="content">
+        <div class="categoryTabMenu tabMenuBox">
+          <ul class="tabTitle">
+            <li><a href="#">추천</a></li>
+            <li class="active"><a href="#">치아</a></li>
+            <li><a href="#">건강</a></li>
+            <li><a href="#">치매</a></li>
+            <li><a href="#">암</a></li>
+            <li><a href="#">종신</a></li>
+          </ul>
+        </div>
+        <ul class="dropDownList interval">
+          <li><a href="#">(무)THE건강한치아보험V(갱신형)</a></li>
+          <li><a href="#">(무)THE든든해진라이나치아보험(갱신형)</a></li>
+          <li><a href="#">(무)THE든든한실버치아보험</a></li>
+        </ul>
+        <button type="button" class="btnDropDownClose">닫기</button>
+      </div>
+    </div>
+    <button type="button">닫기</button>
+  </div>
+
+  <div class="productCont">
+    <div class="visual"><img src="../../img/product/img_visual.png" alt="" /></div>
+    <div class="inner">
+      <div class="title">
+        <h2>
+          <span>압도적 업계1위! 치아보험 원조</span>
+          <strong>(무)THE건강한치아보험V<br>(갱신형)</strong>
+        </h2>
+        <div class="shareCont">
+          <button type="button" class="kakao">카카오톡</button>
+          <button type="button" class="share">공유</button>
+          <button type="button" class="download">다운로드</button>
+          <button type="button" class="design">간편설계</button>
+        </div>
+      </div>
+      
+      <ul>
+        <li><a href="./productDetail.html">상품특징</a></li>
+        <li><a href="./productDetail.html">보장내용</a></li>
+        <li><a href="./productDetail.html">가입안내</a></li>
+        <li><a href="./productDetail.html">알아두실 사항</a></li>
+      </ul>
+      
+      <p class="footer">라이나생명 준법감시인 확인필 제 2022-000000호<br>(2022-00-00~2023-00-00)</p>
+    </div>
+  </div>
+
+  <div id="dimmed"></div>
+
+  <div id="alertCopyMsg"><p>URL이 복사되었습니다.</p></div>
+</div>
+
+<script src="../../js/common.js"></script>
+
+<script>
+  var btnShare = document.querySelector('.share');
+  urlCopy(btnShare);
+</script>
+
+</body>
+</html>

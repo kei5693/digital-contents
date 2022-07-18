@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>customerDetail</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+
+</head>
+<body>
+<div id="customerDetail" class="maxWidth">
+  <h1 class="alignCenter color">
+    치아
+    <button type="button" class="btnBack">닫기</button>
+  </h1>
+  <div class="productTitle">
+    <h3>나이 들수록 걱정되는 임플란트 치료비</h3>
+  </div>
+
+  <div class="detailContents">
+    <div class="visualCont">
+      <img src="../../img/customer/detail/img_customer_detail.png" alt="" />
+    </div>
+    <div class="statusCont">
+      <div class="share">
+        <button type="button" class="kakao">카카오톡</button>
+        <button type="button" class="share">공유</button>
+      </div>
+      <div class="count">
+        <span>조회수 253회</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="alertCopyMsg"><p>URL이 복사되었습니다.</p></div>
+  <button id="btnTop" type="button">top</button>
+  <div id="dimmed"></div>
+</div>
+
+<script src="../../js/common.js"></script>
+<script>
+  var btnShare = document.querySelector('.share');
+  urlCopy(btnShare);
+</script>
+
+</body>
+</html>

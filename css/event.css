@@ -1,0 +1,419 @@
+@charset "utf-8";
+
+/* 이벤트 헤더 */
+.eventHeader {
+  position: relative;
+  border-bottom: 1px solid #D7D7D7;
+}
+.eventHeader h1 {
+  height: 100%;
+  line-height: 5.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+  z-index: 0;
+}
+.eventHeader button {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 3.6rem;
+  height: 3.6rem;
+  background: url('../img/common/icon_close4.png') no-repeat 50% 50%;
+  background-size: 1.6rem;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* 이벤트 유의사항(공통) */
+.eventNotice {
+  padding: 2.6rem 2rem;
+  background: #F4F4F4;
+}
+.eventNotice > h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #000;
+}
+.eventNotice > ul {
+  margin-top: 0.8rem;
+}
+.eventNotice > ul > li {
+  position: relative;
+  padding-left: 0.8rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #4B4E53;
+}
+.eventNotice > ul > li:after {
+  content: '·';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 이벤트 팝업 */
+#layerPopupEventDialog {
+  opacity: 0;
+  transition: opacity 0.3s ease, left 0.3s ease;
+  transition-delay: 0.3s, 0.6s;
+  
+  position: fixed;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  z-index: 200;
+  width: 100%;
+  padding: 0 2rem;
+}
+#layerPopupEventDialog.visible {
+  opacity: 1;
+  left: 0;
+  transition: opacity 0.3s ease, left 0s ease;
+  transition-delay: 0s, 0s;
+}
+#layerPopupEventDialog .inner {
+  max-width: 72.8rem;
+  margin: 0 auto;
+  
+  padding: 2.4rem 2.4rem 1.6rem;
+  background: #fff;
+  border-radius: 1rem;
+}
+#layerPopupEventDialog .inner > ul > li {
+  display: none;
+}
+#layerPopupEventDialog .inner > ul > li.on {
+  display: block;
+}
+#layerPopupEventDialog .inner > ul > li h2 {
+  font-size: 1.6rem ;
+  font-weight: 700;
+}
+#layerPopupEventDialog .inner > ul > li p {
+  margin-top: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+#layerPopupEventDialog .inner > button {
+  margin-top: 1.6rem;
+  display: block;
+  width: 100%;
+  height: 3.6rem;
+
+  background-color: #150F96;
+  border-radius: 4px;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* 퀴즈 이벤트 - ox */
+#quizEvent > #container {
+  padding-bottom: 8.6rem;
+}
+#quizEvent > #container .quizList > p {
+  padding: 1rem 2rem;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #150F96;
+  background-color: #FFB617;
+}
+#quizEvent > #container .quizList > h2 {
+  padding: 2.4rem 2rem 3.2rem;
+  background: #150F96;
+
+  font-family: 'NanumMyeongjo';
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+#quizEvent > #container .quizList > h2 strong {
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  font-size: 2.6rem;
+  color: #FFB617;
+  border-bottom: 1px solid #FFB617;
+}
+#quizEvent > #container .quizList > h2 span {
+  display: block;
+  margin-top: 1.6rem;
+  line-height: 1.4;
+}
+#quizEvent > #container .quizList > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+}
+#quizEvent > #container .quizList > ul > li {
+  width: 50%;
+}
+#quizEvent > #container .quizList > ul > li + li {
+  margin-left: 0.8rem;
+}
+#quizEvent > #container .quizList > ul > li input {
+  display: none;
+}
+#quizEvent > #container .quizList > ul > li label {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15.6rem;
+  border: 1px solid #D7D7D7;
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+#quizEvent > #container .quizList > ul > li label span {
+  display: block;
+  width: 100%;
+  height: 8.8rem;
+  background: url('../img/common/icon_o.png') no-repeat 50% 0;
+  background-size: 8.8rem auto;
+  font-size: 0;
+  line-height: 0;
+}
+#quizEvent > #container .quizList > ul > li #answerX + label span {
+  background-image: url('../img/common/icon_x.png');
+}
+#quizEvent > #container .quizList > ul > li input:checked + label {
+  background: #150f96;
+  border-color: #150f96;
+}
+#quizEvent > #container .quizList > ul > li input:checked + label span {
+  background-position: 50% -8.8rem;
+}
+#quizEvent > #btnApplyEvent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5.6rem;
+
+  background-color: #EBF3FF;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #AFAFAF;
+}
+#quizEvent > #btnApplyEvent.active {
+  background-color: #150F96;
+  color: #fff;
+}
+
+/* 퀴즈 이벤트 사지선다 */
+#quizEvent.quiz_multiple > #container .quizList > p {
+  background: #01C1D6;
+}
+#quizEvent.quiz_multiple > #container .quizList > h2 strong {
+  color: #01C1D6;
+  border-bottom-color: #01C1D6;
+}
+#quizEvent.quiz_multiple > #container .quizList > p {
+  background: #01C1D6;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul {
+  display: block;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li {
+  width: 100%;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li + li {
+  margin: 0.8rem 0 0;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li label {
+  height: 5.6rem;
+  box-sizing: border-box;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li label span {
+  position: relative;
+  height: auto;
+  padding: 0 4.4rem 0 1.6rem;
+
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000;
+  line-height: normal;
+
+  background: none;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li input:checked + label span {
+  color: #fff;
+}
+#quizEvent.quiz_multiple > #container .quizList > ul > li input:checked + label span:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url('../img/common/icon_check.png') no-repeat;
+  background-size: 3.2rem;
+}
+
+/* 스트래치 이벤트 */
+#scratchEvent #container {
+  padding-bottom: 5rem;
+}
+#scratchEvent .visual .inner {
+  position: relative;
+}
+#scratchEvent .visual .inner img {
+  display: block;
+  width: 100%;
+}
+#scratchEvent .visual .inner .textContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3.2rem 2rem 0;
+  color: #fff
+}
+#scratchEvent .visual .inner .textContent > span {
+  position: absolute;
+  top: 2.4rem;
+  right: 2.4rem;
+  width: 6.4rem;
+  height: 6.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #000;
+  border-radius: 50%;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+#scratchEvent .visual .inner .textContent > h2 {
+  display: inline-block;
+  font-size: 3.2rem;
+  font-weight: 800;
+  font-family: 'NanumMyeongjo';
+  line-height: 1.3;
+  color: #fff;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #fff;
+}
+#scratchEvent .visual .inner .textContent > p {
+  margin-top: 2.4rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+#scratchEvent .visual .period {
+  padding: 1rem 1.6rem;
+  min-height: 4rem;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #000;
+}
+#scratchInner {
+  overflow: hidden;
+  border-radius: 0.8rem;
+  user-select: none;
+
+  position: relative;
+  margin: 3.2rem 2rem;
+}
+#scratchInner .canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.66, 1, 1);
+}
+#scratchInner .canvas.hidden {
+  opacity: 0;
+}
+#scratchInner .inner_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  visibility: hidden;
+  background: #FFB617;
+
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+#scratchInner .inner_content.visible {
+  visibility: visible;
+}
+
+@media (max-width: 320px) {
+  #scratchEvent .visual .inner .textContent {
+    padding: 3.2rem 1.5rem 0;
+  }
+  #scratchEvent .visual .inner .textContent > span {
+    right: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .eventNotice h3 {
+    font-size: 2.8rem;
+  }
+  .eventNotice > ul > li {
+    padding-left: 1.6rem;
+    font-size: 2.4rem;
+  }
+
+  #quizEvent > #container {
+    padding-bottom: 18.6rem;
+  }
+  #quizEvent > #btnApplyEvent {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 76.8rem;
+    font-size: 3.6rem;
+    height: 11.2rem;
+  }
+  #quizEvent > #container .quizList > p {
+    font-size: 2.8rem;
+  }
+  #quizEvent > #container .quizList > h2 {
+    font-size: 4.4rem;
+  }
+  #quizEvent > #container .quizList > h2 strong {
+    font-size: 5.2rem;
+  }
+
+  #quizEvent.quiz_multiple > #container .quizList > ul > li label {
+    height: 11.2rem;
+    padding: 0 4.4rem 0 3.2rem;
+  }
+  #quizEvent.quiz_multiple > #container .quizList > ul > li label span {
+    font-size: 3.6rem;
+  }
+
+  #scratchEvent .visual .inner .textContent {
+    padding: 6.4rem 4.8rem;
+  }
+  #scratchEvent .visual .inner .textContent > h2 {
+    font-size: 5rem;
+  }
+  #scratchEvent .visual .inner .textContent > p {
+    font-size: 2.8rem;
+  }
+  #scratchEvent .visual .inner .textContent > span {
+    top: 4.8rem;
+    right: 4.8rem;
+    width: 12.8rem;
+    height: 12.8rem;
+    font-size: 2.4rem;
+  }
+  #scratchEvent .visual .period {
+    padding: 2rem 3.2rem;
+    font-size: 2.8rem;
+  }
+}

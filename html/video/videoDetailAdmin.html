@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>videoDetailAdmin</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+</head>
+<body>
+  
+<div id="videoDetail" class="maxWidth">
+  <h1 class="alignCenter">
+    교육영상
+    <button type="button" class="btnBack">닫기</button>
+  </h1>
+  <!-- commentsCont -->
+  <div class="commentsCont">
+    <div class="videoBox">
+      <div class="movie"><img src="../../img/video/detail/img_video3.png" alt="" /></div>
+      <div class="title">
+        <p>라이나 GAGA 8회 (라이나 생명 준법감시인 확인필 제 2021-M00864호)</p>
+        <div class="info">
+          <span>조회수 584회</span>
+          <span>6일 전</span>
+          <span>좋아요 38</span>
+        </div>
+        <div class="btn">
+          <button class="like" onclick="toggleEvent(this, 'active')"></button>
+          <button class="download"></button>
+        </div>
+      </div>
+      <div class="textDropDown">
+        <p>14년 보험 베테랑 (주)리치앤코 정서경 팀장님의 진솔한 보험이야기 입니다. 나에게 고객은 '동반자입니다'. 저라는 사람을 통해 보험과 인연을 맺어서 그 분이 저와 함께 시작을 해주시는 거예요. 정말 힘든일을 겪었을때 금전적으로는 힘들지 않게 옆에서 든든한 버팀목이 되어주는거죠. 그래서 보험은 동반자라는 표현이 가장 잘 맞는 것 같아요.</p>
+      </div>
+    </div>
+
+    <div class="commentBox">
+      <div class="inner">
+        <div class="countBox">
+          <strong>댓글</strong>
+          <span>21개</span>
+        </div>
+
+        <ul class="commentList admin">
+          <li>
+            <div class="wrap">
+              <p>좋은 정보 감사합니다. ^ㅇ^ 설계사님 노하우 덕분에 좋은 기운 받고 갑니다.</p>
+              <div>
+                <span>마곡 조*정</span>
+                <em>3시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+          <li class="admin">
+            <div class="wrap">
+              <p>안녕하세요 마곡 설계사님. 다음에도 좋은 컨텐츠로 찾아뵙겠습니다.</p>
+              <div>
+                <span>관리자</span>
+                <em>1시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="wrap">
+              <p>꼭 제 이야기 같아요. 다른 설계사분들도 저와 같은 맘이 실테죠?</p>
+              <div>
+                <span>종로 라*나</span>
+                <em>3시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="wrap">
+              <p>질휴담보 최고죠👍👍👍</p>
+              <div>
+                <span>여수 최*훈</span>
+                <em>4시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="wrap">
+              <p>팀장님 만의 노하우 전수 감사합니다~! 공감가는이야기도 많고 배울점도 많았어요 저도 팀장님처럼 멋진 베테랑이 될래요!😀</p>
+              <div>
+                <span>광진 김*나</span>
+                <em>5시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+          <li class="delete">
+            <div class="wrap">
+              <p>관리자에 의해 댓글이 삭제되었습니다.</p>
+              <div>
+                <span>광진 김*나</span>
+                <em>5시간 전</em>
+                <button type="button">옵션</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="btnMore visible">
+          <button type="button" id="btnMore"><span>더보기</span></button>
+        </div>
+
+        <div class="commentInput">
+          <p class="admin">댓글을 입력해주세요</p>
+          <div class="inputBox">
+            <div class="title">
+              <strong>댓글달기</strong>
+              <span class="admin">컨텐츠 관리자</span>
+            </div>
+
+            <div class="inputArea">
+              <textarea placeholder="댓글을 입력해주세요" id="textArea"></textarea>
+            </div>
+
+            <div class="register">
+              <div class="count">
+                <span id="textCount">0</span>/200
+              </div>
+
+              <div class="btn">
+                <button type="button" class="cancel">취소</button>
+                <button type="button" class="regist">등록</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //commentsCont -->
+  <div id="dimmed"></div>
+
+  <div id="layerPopup">
+    <div class="inner">
+      <div class="commentEdit">        
+        <button type="button" class="write"><span>답 댓글 달기</span></button>
+        <button type="button" class="modify"><span>댓글 수정</span></button>
+        <button type="button" class="delete"><span>댓글 삭제</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="layerPopupDialog">
+    <div class="inner">
+      <p class="msgRegist">등록 되었습니다.</p>
+      <p class="msgModify">수정 되었습니다.</p>
+      <p class="msgConfirm">선택한 댓글을 삭제 하시겠습니까?</p>
+      <p class="msgDelete">삭제 되었습니다.</p>
+      <div>
+        <button type="button" class="btnConfirm">확인</button>
+        <button type="button" class="btnCancel">취소</button>
+        <button type="button" class="btnDelete">삭제</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/common.js"></script>
+<script>
+  var commentInput = document.querySelector('.commentInput');
+  var commentInputShow = commentInput.querySelector(':scope > p');
+  var commentInputHidden = commentInput.querySelectorAll(':scope .inputBox .register .btn button');
+
+  commentInputShow.addEventListener('click', ()=>{
+    commentInputOpenFocus();
+  });
+  
+  function commentInputOpenFocus(){
+    // 팝업 올라온 후 textarea에 포커스
+    commentInput.classList.add('active');
+    setTimeout(() => {
+      document.querySelector('#textArea').focus();
+    }, 1000);
+  }
+
+  // 하단 댓글 메뉴 클릭 시 댓글쓰기 메뉴 등장
+  commentInputHidden.forEach((button)=>{
+    button.addEventListener('click', ()=>{
+      commentInput.classList.remove('active');
+    });
+  });
+
+
+
+  var textArea = document.querySelector('#textArea');
+  var textCount = document.querySelector('#textCount');
+  textArea.onkeyup = function () {
+    var length = this.value.length;
+    textCount.innerHTML = length;
+
+    var btnRegist = document.querySelector('.regist');
+    length > 0 ? btnRegist.classList.add('active') : btnRegist.classList.remove('active');
+  };
+
+
+
+  var commentListAdmin = document.querySelector('.commentList.admin');
+  var adminList = commentListAdmin.querySelectorAll(':scope > li .wrap > div button');
+  var layerPopup = document.querySelector('#layerPopup');
+
+  adminList.forEach((list)=>{
+    list.addEventListener('click', ()=>{
+      layerPopupOpen();
+    });
+  });
+
+  dimmed.addEventListener('click', ()=>{
+    layerPopupDialog.classList.remove('visible');
+    layerPopupClose();
+  });
+
+
+  function layerPopupOpen(){
+    layerPopup.classList.add('visible');
+    dimmed.classList.add('visible');
+  }
+  function layerPopupClose(){
+    layerPopup.classList.remove('visible');
+    dimmed.classList.remove('visible');
+  }
+
+
+
+
+
+  var commentEdit = document.querySelector('.commentEdit');
+  var commentEditBtn = commentEdit.querySelectorAll(':scope > button');
+  var layerPopupDialog = document.querySelector('#layerPopupDialog');
+
+  commentEditBtn.forEach((button)=>{
+    button.addEventListener('click', (e)=>{
+      var target = e.target.closest('button').className; 
+
+      if(target == 'write' || target == 'modify'){
+        setTimeout(() => {
+          commentInputOpenFocus();
+        }, 400);
+        layerPopupClose();
+      } else {
+        // delete
+        layerPopupDialog.classList.add('visible');
+        commentInput.classList.remove('active');
+      }
+    });
+  });
+  
+  var dialogButton = layerPopupDialog.querySelectorAll(':scope .inner > div button');
+  dialogButton.forEach((button)=>{
+    button.addEventListener('click', (e)=>{
+      layerPopupDialog.classList.remove('visible');
+      layerPopupClose();
+    });
+  });
+
+</script>
+</body>
+</html>

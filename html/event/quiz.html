@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>quiz event</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/event.css">
+</head>
+<body>
+  
+<div id="quizEvent" class="maxWidth">
+  <header class="eventHeader">
+    <h1>매일 매일 퀴즈 이벤트</h1>
+    <button type="button">닫기</button>
+  </header>
+  
+  <section id="container">
+    <div class="quizList">
+      <p>퀴즈 정답자에게 베네피아 100 Point를 지급합니다.</p>
+      <h2>
+        <strong>Q.</strong>
+        <span>
+          우주의 탄생부터 천문학·물리학의 역사, 달 탐사와 인공위성, 인류의 이주 행성 탐사에 이르기까지,방대한 우주 이야기를 알기 쉽게 설명한 책의 이름은 '코린토스'의 이다.
+        </span>
+      </h2>
+
+      <ul>
+        <li><input type="radio" name="quiz_ox" id="answerO" /><label for="answerO"><span>o</span></label></li>
+        <li><input type="radio" name="quiz_ox" id="answerX" /><label for="answerX"><span>x</span></label></li>
+      </ul>
+    </div>
+    
+    <div class="eventNotice">
+      <h3>유의사항</h3>
+      <ul>
+        <li>이벤트는 하루 한번만 참여 가능합니다.</li>
+        <li>리워드와 포인트 지급에 관한 유의사항을 적어주세요.</li>
+        <li>기타 유의사항을 적어주세요.</li>
+      </ul>
+    </div>
+  </section>
+  
+  <button type="button" id="btnApplyEvent">퀴즈 응모하기</button>
+</div>
+
+<div id="dimmed"></div>
+<div id="layerPopupEventDialog">
+  <div class="inner">
+    <ul>
+      <!-- on class로 보여줄 메시지 변경 -->
+      <li class="on">
+        <h2>정답입니다.</h2>
+        <p>베네피아 100 Point가 지급됩니다.</p>
+      </li>
+      <li>
+        <h2>오답입니다.</h2>
+        <p>내일 다시 응모해주세요.</p>
+      </li>
+      <li>
+        <h2>오늘은 퀴즈에 참여하셨습니다.</h2>
+        <p>내일 다시 응모해주세요.</p>
+      </li>
+    </ul>
+
+    <button type="button" id="btnConfirm">확인</button>
+  </div>
+</div>
+
+<script src="../../js/common.js"></script>
+<script>
+  var layerPopup = document.querySelector('#layerPopupEventDialog');
+  var btnConfirm = document.querySelector('#btnConfirm');
+  var btnApplyEvent = document.querySelector('#btnApplyEvent');
+  
+  btnApplyEvent.addEventListener('click', ()=>{
+    console.log('btnApplyEvent');
+    layerPopupOpen();
+  });
+
+  dimmed.addEventListener('click', ()=>{
+    layerPopupClose();
+  });
+
+  btnConfirm.addEventListener('click', ()=>{
+    layerPopupClose();
+  });
+
+  function layerPopupOpen(){
+    layerPopup.classList.add('visible');
+    dimmed.classList.add('visible');
+  }
+
+  function layerPopupClose(){
+    layerPopup.classList.remove('visible');
+    dimmed.classList.remove('visible');
+  }
+</script>
+
+</body>
+</html>

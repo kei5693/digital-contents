@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>scratch event</title>
+  <link rel="stylesheet" rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" rel="stylesheet" href="../../css/event.css">
+</head>
+<body>
+
+<div id="scratchEvent" class="maxWidth">
+	<header class="eventHeader">
+    <h1>스크래치 이벤트</h1>
+    <button type="button">닫기</button>
+  </header>
+
+	<div id="container">
+		<div class="visual">
+			<div class="inner">
+				<img src="../../img/event/scratch/img_visual.png" alt="" />
+
+				<div class="textContent">
+					<span>라이나G<br>ONLY</span>
+					<h2>행운의<br>스크래치 이벤트</h2>
+					<p>이벤트 기간동안<br>최대 0,000 Point 즉시당첨</p>
+				</div>
+			</div>
+			<p class="period">기간 : 2022년 7월 1일 ~ 31일 </p>
+		</div>
+
+		<div id="scratchInner">
+			<canvas class="canvas" id="canvasEl"></canvas>  
+			<div class="inner_content">
+				베네피아<br>100 Point
+			</div>
+		</div>
+
+		<div class="eventNotice">
+			<h3>유의사항</h3>
+			<ul>
+				<li>이벤트는 하루 한번만 참여 가능합니다.</li>
+				<li>리워드와 포인트 지급에 관한 유의사항을 적어주세요.</li>
+				<li>기타 유의사항을 적어주세요.</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="dimmed"></div>
+<div id="layerPopupEventDialog">
+  <div class="inner">
+    <ul>
+      <!-- on class로 보여줄 메시지 변경 -->
+      <li class="on">
+        <h2>이미 스크래치 이벤트에 참여하셨습니다.</h2>
+      </li>
+    </ul>
+
+    <button type="button" id="btnConfirm">확인</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/scratch.js"></script>
+
+</body>
+</html>
